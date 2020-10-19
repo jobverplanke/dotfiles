@@ -1,5 +1,5 @@
 alias ll="ls -lahF"
-alias dev="cd $HOME/dev"
+alias dev='cd "$HOME/dev"'
 alias ppath='echo -e ${PATH//:/\\n}'
 alias git=hub
 
