@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+function symLinkFile() {
+    SRC="$1"
+    DEST="$2"
+
+    if [[ -f "$DEST" ]]; then
+        rm -r "$DEST"
+        ln -sf "$SRC" "$DEST"
+    else
+        ln -sf "$SRC" "$DEST"
+    fi
+}
+
 function log() {
   echo "$1" >> "$LOG_DIR/install.log"
 }
@@ -7,7 +19,6 @@ function log() {
 function newLine() {
   log ""
 }
-
 
 function logDateTimeInstall() {
   date "+[%d/%m/%Y %H:%M:%S] [$1]: $2" >> "$LOG_DIR/install.log"
@@ -18,6 +29,14 @@ function appIsInstalled() {
   logDateTimeInstall "$1" "Already installed."
   newLine
 }
+
+
+
+
+
+
+
+
 
 
 function logBrewInstall() {
@@ -39,14 +58,3 @@ function logBrewInstall() {
   # fi
 }
 
-function symLinkFile() {
-    SRC="$1"
-    DEST="$2"
-
-    if [[ -f "$DEST" ]]; then
-        rm -r "$DEST"
-        ln -sf "$SRC" "$DEST"
-    else
-        ln -sf "$SRC" "$DEST"
-    fi
-}

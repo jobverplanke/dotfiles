@@ -10,13 +10,15 @@ DEFAULT_PHP_VERSION='7.4'
 DEFAULT_MYSQL_VERSION='8.0'
 LOG_DIR="$DOTFILES/.log"
 
+# Install all our dependencies with bundle (See Brewfile)
+brew tap homebrew/bundle
+brew bundle
+
 mkdir -p "$LOG_DIR"
 
 source scripts/helpers.sh
 source scripts/brew.sh
-source scripts/applications.sh
 source scripts/php.sh
-
 
 newLine
 log -e "Setting up macOS Development Environment for: $USER"
@@ -24,13 +26,7 @@ logDateTimeInstall "Init" "Setting up macOS Development Environment for: $USER"
 newLine
 
 installBrew
-updateBrew
-updateBrewTaps
-installCliApps
 installPhp
-installGuiApps
-startBrewServices
-cleanUpBrew
 
 log "Installation log can be found at: $LOG_DIR/install.log"
 log "Installed software/applications log can be found at: $LOG_DIR/installed_apps.log"

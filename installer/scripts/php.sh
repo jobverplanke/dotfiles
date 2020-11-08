@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-function installComposer() {
-   logBrewInstall "brew" "composer"
-}
-
 function installComposerPackages() {
   local packages="
     laravel/valet
@@ -12,7 +8,7 @@ function installComposerPackages() {
   "
 
   if ! test "$(which composer)"; then
-    installComposer
+    logDateTimeInstall "Composer" "Is not installed."
   else
     for package in $packages
     do
@@ -27,7 +23,6 @@ function installPhpPeclPackages() {
   local packages="
     xdebug
     redis
-    pcov
   "
 
   pecl channel-update pecl.php.net
@@ -38,14 +33,6 @@ function installPhpPeclPackages() {
     pecl install "$package"
     newLine
   done
-}
-
-function installPhpCsFixer() {
-  if ! test "$(which php-cs-fixer)"; then
-    logBrewInstall "brew" "php-cs-fixer"
-  else
-    appIsInstalled "php-cs-fixer"
-  fi
 }
 
 function installValet() {
@@ -61,23 +48,12 @@ function installPhp() {
     7.4
   "
 
-  for version in $phpVersions
-  do
-    if ! test "$(which "php@$version")"; then
-      logBrewInstall "brew" "php@$version"
-    else
-      appIsInstalled "php@$version"
-    fi
-  done
-
   log "${YELLOW}Set default PHP version php@$DEFAULT_PHP_VERSION $NC"
   brew link --overwrite php@$DEFAULT_PHP_VERSION --force
   newLine
 
-  installComposer
   installComposerPackages
   installPhpPeclPackages
-  installPhpCsFixer
   installValet
 
   log "${YELLOW}Set custom PHP configuration$NC"
