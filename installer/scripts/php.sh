@@ -8,12 +8,12 @@ function installComposerPackages() {
   "
 
   if ! test "$(which composer)"; then
-    logDateTimeInstall "Composer" "Is not installed."
+    logInstall "Composer" "Is not installed."
   else
     for package in $packages
     do
-      logDateTimeInstall "$package" "Installing $package..."
-      composer global require "$package" 2>&1 | tee -a "$LOG_DIR/install.log"
+      logInstall "$package" "Installing $package..."
+      composer global require "$package" 2>&1 | tee -a "$LOG_DIR/composer-packages.log"
       newLine
     done
   fi
@@ -21,16 +21,16 @@ function installComposerPackages() {
 
 function installPhpPeclPackages() {
   local packages="
-    xdebug
-    redis
+    xdebug@3.0.1
+    redis@5.3.2
   "
 
   pecl channel-update pecl.php.net
 
   for package in $packages
   do
-    logDateTimeInstall "$package" "Installing $package..."
-    pecl install "$package"
+    logInstall "$package" "Installing $package..."
+    pecl install "$package" 2>&1 | tee -a "$LOG_DIR/pecl-packages.log"
     newLine
   done
 }
@@ -41,22 +41,22 @@ function installValet() {
   newLine
 }
 
-function installPhp() {
+function setupPhp() {
   local phpVersions="
     7.2
     7.3
     7.4
   "
 
-  log "${YELLOW}Set default PHP version php@$DEFAULT_PHP_VERSION $NC"
-  brew link --overwrite php@$DEFAULT_PHP_VERSION --force
+  echo -e "${YELLOW}Set default PHP version php@${DEFAULT_PHP_VERSION} ${NC}"
+  brew link --overwrite php@"${DEFAULT_PHP_VERSION}" --force
   newLine
 
   installComposerPackages
   installPhpPeclPackages
   installValet
 
-  log "${YELLOW}Set custom PHP configuration$NC"
+  echo -e "${YELLOW}Set custom PHP configuration${NC}"
 
   for version in $phpVersions
   do

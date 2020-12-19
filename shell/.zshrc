@@ -1,5 +1,5 @@
 # ZSH Settings & plugins
-ZSH_CUSTOM="$HOME/.dotfiles/config/shell/zsh-custom"
+ZSH_CUSTOM="$HOME/.dotfiles/shell/zsh-custom"
 ZSH_THEME="default/agnoster"
 plugins=(
   kubectl
@@ -16,7 +16,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="%d-%m-%y %T"
 
 # Source file for further use
-source $HOME/.dotfiles/config/shell/exports.zsh
-source $HOME/.dotfiles/config/shell/functions.zsh
+source $HOME/.dotfiles/shell/exports.zsh
+source $HOME/.dotfiles/shell/functions.zsh
 source $ZSH/oh-my-zsh.sh
-source $HOME/.dotfiles/config/shell/aliases.zsh
+source $HOME/.dotfiles/shell/aliases.zsh

@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 
-# Always ask sudo, sudo can I?.
 sudo -v
 
-YELLOW=$'\033[1;33m'
-NC=$'\033[0m'
+source scripts/helpers.sh
 
-DEFAULT_PHP_VERSION='7.4'
-DEFAULT_MYSQL_VERSION='8.0'
-LOG_DIR="$DOTFILES/.log"
+newLine
+echo -e "Setting up macOS Development Environment for: $USER"
+logInstall "Init" "Setting up macOS Development Environment for: $USER"
+newLine
 
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
@@ -16,70 +15,11 @@ brew bundle
 
 mkdir -p "$LOG_DIR"
 
-source scripts/helpers.sh
 source scripts/brew.sh
 source scripts/php.sh
 
-newLine
-log -e "Setting up macOS Development Environment for: $USER"
-logDateTimeInstall "Init" "Setting up macOS Development Environment for: $USER"
-newLine
-
 installBrew
-installPhp
-
-log "Installation log can be found at: $LOG_DIR/install.log"
-log "Installed software/applications log can be found at: $LOG_DIR/installed_apps.log"
-
-cat << EOF > $LOG_DIR/installed_apps.log
-The following has been installed.
-Check $LOG_DIR/install.log for more detailed output of the installation
-
-    Applications installed by Brew (brew.sh)
-    ----------------------------------------
-    1Password                   (Password manager)
-    Ansible                     (Agentless IT automation)
-    Appcleaner                  (Uninstall unwanted apps)
-    Backup and Sync             (Google Drive App)
-    Composer                    (Dependency Manager / Package Manager for PHP)
-    Docker Desktop              (Docker Desktop for Mac)
-    Dropbox                     (Cloud storage)
-    Git                         (Latest Git via Brew)
-    Google Chrome               (Web Browser by Google)
-    hey                         ()
-    Homebrew                    (The missing package manager for macOS)
-    htop                        (A interactive process viewer)
-    iTerm2 with oh-my-zsh       (Custom theme)
-    Jetbrains Toolbox           (Toolbox for installing Jetbrains products)
-    Kubectl                     (Kubectl CLI for K8s)
-    Laravel Installer           (Laravel command line installer)
-    mackup                      (Keep your application settings in sync.)
-    Mailplane                   (Email Client)
-    Minikube                    (Local K8s cluster)
-    MySQL client & server       (MySQL Client & server, versions 8.0 & 5.7)
-    Nodejs with NPM             (Node v12 LTS & Node Package Manager)
-    PGP                         (GNU Pretty Good Privacy (PGP) package)
-    PHP                         (with versions 7.2, 7.3 & 7.4)
-    Postman                     (REST client application for testing REST APIs)
-    Rectangle                   (Window manager)
-    Redis                       (In memory Key value pair database)
-    Slack                       (Messaging platform)
-    Sourcetree                  (Git GUI)
-    svn                         (Only needed for installing fonts through Brew)
-    SQLite                      (A flat file database)
-    TablePlus                   (Database client / management tool)
-    TinkerWell                  (The "magical" code editor)
-    Valet                       (A Laravel development environment for Mac minimalists https://laravel.com/docs/master/valet)
-    Visual Studio Code          (Open source code-editor by Microsoft.com)
-    Vue CLI                     (Vue.js CLI)
-    wget                        (Retrieve files using HTTP, HTTPS, FTP and FTPS protocols)
-    WhatsApp                    (WhatsApp Messenger)
-    Xcode CLT                   (Command Line Tools)
-
-    Applications from the AppStore
-    ---------------------
-    ColorNote
-EOF
+setupPhp
 
 newLine
 echo -e "${YELLOW}1. Make sure iCloud is setup correctly, so sign into iCloud if you haven't already.$NC"

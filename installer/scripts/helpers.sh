@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+YELLOW=$'\033[1;33m'
+NC=$'\033[0m'
+
+DEFAULT_PHP_VERSION='7.4'
+DEFAULT_MYSQL_VERSION='8.0'
+LOG_DIR="$DOTFILES/.log"
+
 function symLinkFile() {
     SRC="$1"
     DEST="$2"
@@ -12,49 +19,15 @@ function symLinkFile() {
     fi
 }
 
-function log() {
-  echo "$1" >> "$LOG_DIR/install.log"
+function logInstall() {
+  date "+[%d/%m/%Y %H:%M:%S] [$1]: $2" >> "$LOG_DIR/$1.log"
+}
+
+function appIsInstalled() {
+  logInstall "$1" "Already installed."
+  newLine
 }
 
 function newLine() {
-  log ""
+  echo -e "\n"
 }
-
-function logDateTimeInstall() {
-  date "+[%d/%m/%Y %H:%M:%S] [$1]: $2" >> "$LOG_DIR/install.log"
-}
-
-
-function appIsInstalled() {
-  logDateTimeInstall "$1" "Already installed."
-  newLine
-}
-
-
-
-
-
-
-
-
-
-
-function logBrewInstall() {
-  logDateTimeInstall "$2" "Installing $2..."
-
-  if [ "$1" == "brew" ]; then
-    brew install "$2" 2>&1 | tee -a "$LOG_DIR/.log/install.log"
-  fi
-
-  if [ "$1" == "cask" ]; then
-    brew cask install "$2" 2>&1 | tee -a "$LOG_DIR/.log/install.log"
-  fi
-
-  newLine
-
-  # Do something with status code 0
-  # if [ "${PIPESTATUS[0]}" -ne "0" ]; then
-  #   writeToLog ""
-  # fi
-}
-

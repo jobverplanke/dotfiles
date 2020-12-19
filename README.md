@@ -5,11 +5,15 @@ Inspired by:
 - [Freek's dotfiles](https://github.com/freekmurze/dotfiles)
 
 
+## How to
+In the home directory run the command:
+```shell
+$ bash ~/.dotfile/bootstrap
+```
+
 ## iTerm Fonts
-Font in iTerm
-```shell script
-nerd-font patched (complete)
-``` 
+Font that iTerm uses
+`nerd-font patched (complete)` 
 
 ##### Font Github
 https://github.com/ryanoasis/nerd-fonts

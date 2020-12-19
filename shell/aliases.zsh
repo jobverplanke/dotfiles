@@ -1,5 +1,6 @@
 alias ll="ls -lahF"
 alias dev='cd "$HOME/dev"'
+alias web='cd "$HOME/dev/webapps"'
 alias ppath='echo -e ${PATH//:/\\n}'
 alias git=hub
 
@@ -15,14 +16,16 @@ alias copykey='command cat ~/.ssh/id_personal.pub" | pbcopy'
 alias php72="phpv 7.2"
 alias php73="phpv 7.3"
 alias php74="phpv 7.4"
+alias php80="phpv 8.0"
 alias phplinter='cp $HOME/.dotfiles/config/php/.php_cs "`pwd`"'
 alias tlint="php-cs-fixer fix --config='.php_cs' -v --show-progress=none --dry-run"
 alias pa="php artisan"
 alias pu="vendor/bin/phpunit"
 alias puf="vendor/bin/phpunit --filter "
-alias cphpfiles="find . -type f -print | grep php | wc -l"
+alias phpfiles="find . -type f -print | grep php | wc -l"
 
 alias ip="curl https://diagnostic.opendns.com/myip ; echo"
+alias ports="sudo lsof -PiTCP -sTCP:LISTEN | grep $1"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 alias usage="du -sh"
@@ -32,6 +35,6 @@ alias gitlog="git l"
 alias gitlogp="git g"
 alias gitcont="git contrib"
 
-alias phpstorm='open -a ~/Library/Application\ Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/202.6397.115/PhpStorm.app "`pwd`"'
+alias phpstorm='open -a ~/Library/Application\ Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/203.5981.175/PhpStorm.app "`pwd`"'
 alias idea='open -a ~/Library/Application\ Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/202.6397.94/IntelliJ\ IDEA.app "`pwd`"'
 alias code='open -a /Applications/Visual\ Studio\ Code.app "`pwd`"'

@@ -34,3 +34,6 @@ export KUBECONFIG="$HOME/.kube/config"
 
 # Always enable colored `grep` output
 export GREP_OPTIONS="--color=auto"
+
+# Github Container Registry
+export GHCR_PAT=

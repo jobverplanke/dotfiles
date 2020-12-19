@@ -4,6 +4,7 @@ tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/core'
 tap 'homebrew/services'
+tap 'shivammathur/php'
 
 # Binaries
 brew 'autoconf'
@@ -23,14 +24,14 @@ brew 'wget'
 brew 'xz'
 
 # Development
-brew 'ansible'
-brew 'php', restart_service: true
-brew 'php@7.2'
-brew 'php@7.3'
+brew 'shivammathur/php/php@7.2'
+brew 'shivammathur/php/php@7.3'
+brew 'shivammathur/php/php@7.4'
+brew 'shivammathur/php/php@8.0', restart_service: true
 brew 'composer'
 brew 'minikube'
-brew 'mysql', restart_service: true
 brew 'mysql@5.7'
+brew 'mysql@8.0', restart_service: true
 brew 'nginx', restart_service: true
 brew 'node@12'
 brew 'redis'
@@ -46,7 +47,6 @@ cask 'font-hack-nerd-font'
 cask 'font-ibm-plex-mono'
 cask 'google-backup-and-sync'
 cask 'jetbrains-toolbox'
-cask 'macpass'
 cask 'postman'
 cask 'rectangle'
 cask 'slack'
@@ -57,9 +57,8 @@ cask 'iterm2'
 cask 'google-chrome'
 cask 'gpg-suite-no-mail'
 cask 'mailplane'
-cask 'sourcetree'
 cask 'tinkerwell'
 cask 'whatsapp'
 
 # Mac App Store Apps
-mas 'Jira', id: 1475897096
+# mas 'Jira', id: 1475897096
