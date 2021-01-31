@@ -1,10 +1,10 @@
-<scheme name="Default Light Lite" version="142" parent_scheme="Default">
+<scheme name="Personal Light Lite Theme" version="142" parent_scheme="Default">
   <option name="FONT_SCALE" value="1.0" />
   <metaInfo>
-    <property name="created">2020-10-19T00:35:13</property>
+    <property name="created">2020-12-19T22:36:15</property>
     <property name="ide">PhpStorm</property>
-    <property name="ideVersion">2020.2.0.0</property>
-    <property name="modified">2020-10-19T00:35:27</property>
+    <property name="ideVersion">2020.3.0.0</property>
+    <property name="modified">2020-12-19T22:36:33</property>
     <property name="originalScheme">Default Light Lite</property>
   </metaInfo>
   <option name="LINE_SPACING" value="1.4" />

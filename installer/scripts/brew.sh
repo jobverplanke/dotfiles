@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+sudo -v
+
+# Enables to call script as stand-alone script
+source ./helpers.sh
+
 function installBrew() {
   logInstall "Brew" "Installing Brew..."
 

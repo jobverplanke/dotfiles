@@ -1,10 +1,19 @@
 #!/usr/bin/env bash
 
+sudo -v
+
+# Enables to call script as stand-alone script
+source ./helpers.sh
+
+YELLOW=$'\033[1;33m'
+NC=$'\033[0m'
+
+DEFAULT_PHP_VERSION='7.4'
+
 function installComposerPackages() {
   local packages="
     laravel/valet
     laravel/installer
-    vimeo/psalm
   "
 
   if ! test "$(which composer)"; then
@@ -21,8 +30,8 @@ function installComposerPackages() {
 
 function installPhpPeclPackages() {
   local packages="
-    xdebug@3.0.1
-    redis@5.3.2
+    igbinary-3.1.6
+    redis-5.3.2
   "
 
   pecl channel-update pecl.php.net
@@ -30,15 +39,9 @@ function installPhpPeclPackages() {
   for package in $packages
   do
     logInstall "$package" "Installing $package..."
-    pecl install "$package" 2>&1 | tee -a "$LOG_DIR/pecl-packages.log"
+    yes | pecl install "$package" 2>&1 | tee -a "$LOG_DIR/pecl-packages.log"
     newLine
   done
-}
-
-function installValet() {
-  valet install
-  sudo valet trust
-  newLine
 }
 
 function setupPhp() {
@@ -46,22 +49,25 @@ function setupPhp() {
     7.2
     7.3
     7.4
+    8.0
   "
 
-  echo -e "${YELLOW}Set default PHP version php@${DEFAULT_PHP_VERSION} ${NC}"
-  brew link --overwrite php@"${DEFAULT_PHP_VERSION}" --force
+  echo -e "${YELLOW}Set default PHP version php@$DEFAULT_PHP_VERSION ${NC}"
+  brew link --overwrite "php@$DEFAULT_PHP_VERSION" --force
   newLine
 
   installComposerPackages
   installPhpPeclPackages
-  installValet
 
   echo -e "${YELLOW}Set custom PHP configuration${NC}"
 
   for version in $phpVersions
   do
-    sed -i '' 's/zend_extension="xdebug.so"/; zend_extension="xdebug.so"/g' "/usr/local/etc/php/$version/php.ini"
-    symLinkFile "$DOTFILES/config/php/custom.ini" "/usr/local/etc/php/$version/conf.d/zz-custom.ini"
-    symLinkFile "$DOTFILES/config/php/xdebug.ini" "/usr/local/etc/php/$version/conf.d/zz-xdebug.ini"
+    if [[ -d "/usr/local/etc/php/$version" ]]; then
+      symLinkFile "$DOTFILES/config/php/zz-custom.ini" "/usr/local/etc/php/$version/conf.d/zz-custom.ini"
+      echo -e "Symlinked custom configuration for PHP${version}."
+    fi
   done
 }
+
+setupPhp

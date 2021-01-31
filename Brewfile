@@ -23,11 +23,11 @@ brew 'svn' # Need for font-ibm-plex-mono
 brew 'wget'
 brew 'xz'
 
-# Development
+# Development (binaries)
 brew 'shivammathur/php/php@7.2'
 brew 'shivammathur/php/php@7.3'
-brew 'shivammathur/php/php@7.4'
-brew 'shivammathur/php/php@8.0', restart_service: true
+brew 'shivammathur/php/php@7.4', restart_service: true
+brew 'shivammathur/php/php@8.0'
 brew 'composer'
 brew 'minikube'
 brew 'mysql@5.7'
@@ -36,9 +36,9 @@ brew 'nginx', restart_service: true
 brew 'node@12'
 brew 'redis'
 brew 'sqlite'
-brew 'yarn'
 
 # Apps
+cask '1password'
 cask 'appcleaner'
 cask 'docker'
 cask 'dotnet-sdk'
@@ -56,7 +56,7 @@ cask 'visual-studio-code'
 cask 'iterm2'
 cask 'google-chrome'
 cask 'gpg-suite-no-mail'
-cask 'mailplane'
+cask 'spark'
 cask 'tinkerwell'
 cask 'whatsapp'
 

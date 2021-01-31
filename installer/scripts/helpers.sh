@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-YELLOW=$'\033[1;33m'
-NC=$'\033[0m'
-
-DEFAULT_PHP_VERSION='7.4'
-DEFAULT_MYSQL_VERSION='8.0'
 LOG_DIR="$DOTFILES/.log"
 
 function symLinkFile() {
@@ -20,7 +15,7 @@ function symLinkFile() {
 }
 
 function logInstall() {
-  date "+[%d/%m/%Y %H:%M:%S] [$1]: $2" >> "$LOG_DIR/$1.log"
+  date "+[%d/%m/%Y %H:%M:%S] [$1]: $2" >> "$LOG_DIR/install.log"
 }
 
 function appIsInstalled() {

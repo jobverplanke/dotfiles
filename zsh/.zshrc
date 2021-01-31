@@ -1,10 +1,7 @@
 # ZSH Settings & plugins
-ZSH_CUSTOM="$HOME/.dotfiles/shell/zsh-custom"
 ZSH_THEME="default/agnoster"
-plugins=(
-  kubectl
-  minikube
-)
+ZSH_CUSTOM=${HOME}/.dotfiles/zsh/zsh-custom
+plugins=()
 
 # Terminal Settings
 # Uncomment the following line if you want to disable marking untracked files
@@ -16,7 +13,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="%d-%m-%y %T"
 
 # Source file for further use
-source $HOME/.dotfiles/shell/exports.zsh
-source $HOME/.dotfiles/shell/functions.zsh
+source $HOME/.dotfiles/zsh/exports.zsh
+source $HOME/.dotfiles/zsh/functions.zsh
 source $ZSH/oh-my-zsh.sh
-source $HOME/.dotfiles/shell/aliases.zsh
+source $HOME/.dotfiles/zsh/aliases.zsh

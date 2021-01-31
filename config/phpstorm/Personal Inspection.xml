@@ -8,19 +8,20 @@
       <option name="ALLOW_RISKY_RULES" value="true" />
     </scope>
     <option name="CODING_STANDARD" value="Custom" />
-    <option name="CUSTOM_RULESET_PATH" value="$USER_HOME$/dev/resoftware/clients/kl0177/webapps/oms-data-migration/.php_cs" />
+    <option name="CUSTOM_RULESET_PATH" value="$USER_HOME$/dev/webapps/goals/.php_cs" />
     <option name="ALLOW_RISKY_RULES" value="true" />
   </inspection_tool>
   <inspection_tool class="PhpClosureCanBeConvertedToShortArrowFunctionInspection" enabled="true" level="INFORMATION" enabled_by_default="true">
     <scope name="Project Files" level="WEAK WARNING" enabled="true" />
   </inspection_tool>
+  <inspection_tool class="PhpComposerExtensionStubsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
   <inspection_tool class="PhpCompoundNamespaceDepthInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+  <inspection_tool class="PhpDisabledQualityToolComposerInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
   <inspection_tool class="PhpDocMissingReturnTagInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
     <option name="SKIP_ON_EMPTY_PHPDOC" value="false" />
   </inspection_tool>
   <inspection_tool class="PhpLongTypeFormInspection" enabled="true" level="WARNING" enabled_by_default="true" />
-  <inspection_tool class="PhpMethodMayBeStaticInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
-  <inspection_tool class="PhpMissingReturnTypeInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+  <inspection_tool class="PhpMethodMayBeStaticInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
   <inspection_tool class="PhpMissingStrictTypesDeclarationInspection" enabled="true" level="WARNING" enabled_by_default="true" />
   <inspection_tool class="PhpMissingVisibilityInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
   <inspection_tool class="PhpModifierOrderInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
@@ -32,7 +33,8 @@
   <inspection_tool class="PhpTooManyParametersInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
   <inspection_tool class="PhpTraditionalSyntaxArrayLiteralInspection" enabled="true" level="WARNING" enabled_by_default="true" />
   <inspection_tool class="PhpTraitsUseListInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+  <inspection_tool class="PhpUnnecessaryDoubleQuotesInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
   <inspection_tool class="PhpUsageOfSilenceOperatorInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
   <inspection_tool class="PhpVarUsageInspection" enabled="true" level="WARNING" enabled_by_default="true" />
-  <inspection_tool class="StandardJS" enabled="true" level="ERROR" enabled_by_default="true" />
+  <inspection_tool class="YAMLSchemaValidation" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
 </profile>

@@ -2,6 +2,9 @@
 
 sudo -v
 
+YELLOW=$'\033[1;33m'
+NC=$'\033[0m'
+
 function linkFile() {
     SRC="$1"
     DEST="$2"
@@ -15,37 +18,45 @@ function linkFile() {
 }
 
 function bootstrapTerminal() {
-  if [[ ! -d $HOME/.oh-my-zsh ]]; then
-    rm -rf "$HOME/.oh-my-zsh"
-    curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-  fi
+  echo ''
+  echo -e "${YELLOW}------------------${NC}"
+  echo -e "${YELLOW}Bootstrap Terminal${NC}"
+  echo -e "${YELLOW}------------------${NC}"
+  echo 'This will reset your terminal. Are you sure you want to to this? (y/n) '
+  read -rp 'Answer: '  reply
 
-  linkFile "$HOME/.dotfiles/shell/.zshrc" "$HOME/.zshrc"
-  linkFile "$HOME/.dotfiles/git/.global-gitignore" "$HOME/.global-gitignore"
+  if [[ $reply =~ ^[Yy]$ ]]
+  then
+    if [[ ! -d $HOME/.oh-my-zsh ]]; then
+      rm -rf "$HOME/.oh-my-zsh"
+      curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+    fi
+  fi
+  echo ''
 }
 
 function freshInstall() {
   echo ''
-  echo '-------------'
-  echo 'Fresh Install'
-  echo '-------------'
-  echo ''
+  echo -e "${YELLOW}-------------${NC}"
+  echo -e "${YELLOW}Fresh Install${NC}"
+  echo -e "${YELLOW}-------------${NC}"
   echo 'Only use for a fresh installation of you Mac. Are you sure you want to to this? (y/n) '
   read -rp 'Answer: '  reply
   if [[ $reply =~ ^[Yy]$ ]]
   then
      source ./installer/bootstrap
   fi
+  echo ''
 }
 
 function macSettings() {
   echo ''
-  echo '--------------------------'
-  echo 'macOS settings from .macos'
-  echo '--------------------------'
-  echo ''
-  read -p "Apply macOS settings from .macos? ${YELLOW}(reboot required!)${NC}: " -r
-  if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo -e "${YELLOW}--------------------------${NC}"
+  echo -e "${YELLOW}macOS settings from .macos${NC}"
+  echo -e "${YELLOW}--------------------------${NC}"
+  echo -e "Apply macOS settings from .macos? ${YELLOW}(reboot required!)${NC}: (y/n)"
+  read -rp 'Answer: '  reply
+  if [[ $reply =~ ^[Yy]$ ]]; then
     echo -e "\nApplying macOS default settings from ${YELLOW}.macos${NC} \n"
     source .macos
   fi
@@ -53,19 +64,8 @@ function macSettings() {
 }
 
 function init() {
-  echo ''
-  echo '------------------'
-  echo 'Bootstrap Terminal'
-  echo '------------------'
-  echo ''
-  echo 'This will reset your terminal. Are you sure you want to to this? (y/n) '
-  read -rp 'Answer: '  reply
-
-  if [[ $reply =~ ^[Yy]$ ]]
-  then
-     bootstrapTerminal
-  fi
-
+  bootstrapTerminal
+  linkFile "$HOME/.dotfiles/zsh/.zshrc" "$HOME/.zshrc"
   freshInstall
   macSettings
 
