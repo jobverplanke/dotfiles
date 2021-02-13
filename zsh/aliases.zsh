@@ -17,12 +17,10 @@ alias gitconf='open -a /Applications/Visual\ Studio\ Code.app "$HOME/Google\ Dri
 alias aliasconf='open -a /Applications/Visual\ Studio\ Code.app "$DOTFILES/zsh/aliases.zsh"'
 
 # PHP
-alias php72="phpv 7.2"
-alias php73="phpv 7.3"
-alias php74="phpv 7.4"
-alias php80="phpv 8.0"
+alias php73="phpversion 7.3"
+alias php74="phpversion 7.4"
+alias php80="phpversion 8.0"
 alias pa="php artisan"
-alias pp="php please"
 alias cs-copy='cp $HOME/.dotfiles/config/php/.php_cs "`pwd`"'
 alias cs-dry="./vendor/bin/php-cs-fixer fix --config='.php_cs' -v --show-progress=none --dry-run"
 alias cs-fix="./vendor/bin/php-cs-fixer fix --config='.php_cs' -v --show-progress=none"
@@ -31,5 +29,9 @@ alias puf="./vendor/bin/phpunit --filter "
 alias phpfiles="find . -type f -print | grep php | wc -l"
 
 # Editor shortcut
-alias phpstorm='open -a ~/Library/Application\ Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/203.5981.175/PhpStorm.app "`pwd`"'
+alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
 alias code='open -a /Applications/Visual\ Studio\ Code.app "`pwd`"'
+
+# Architecture
+alias toArm="arch -arm64 zsh"
+alias toIntel="arch -x86_64 zsh"
