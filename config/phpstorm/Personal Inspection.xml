@@ -1,12 +1,29 @@
 <profile version="1.0">
   <option name="myName" value="Personal Inspection" />
   <inspection_tool class="CheckDtdRefs" enabled="false" level="ERROR" enabled_by_default="false" />
+  <inspection_tool class="CheckEmptyScriptTag" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="CheckTagEmptyBody" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="CheckXmlFileWithXercesValidator" enabled="false" level="ERROR" enabled_by_default="false" />
   <inspection_tool class="DuplicateKeyInSection" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="DuplicateSectionInFile" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
   <inspection_tool class="HbEmptyBlock" enabled="false" level="WARNING" enabled_by_default="false" />
+  <inspection_tool class="HtmlUnknownTag" enabled="true" level="INFORMATION" enabled_by_default="true">
+    <option name="myValues">
+      <value>
+        <list size="7">
+          <item index="0" class="java.lang.String" itemvalue="nobr" />
+          <item index="1" class="java.lang.String" itemvalue="noembed" />
+          <item index="2" class="java.lang.String" itemvalue="comment" />
+          <item index="3" class="java.lang.String" itemvalue="noscript" />
+          <item index="4" class="java.lang.String" itemvalue="embed" />
+          <item index="5" class="java.lang.String" itemvalue="script" />
+          <item index="6" class="java.lang.String" itemvalue="x-slot" />
+        </list>
+      </value>
+    </option>
+    <option name="myCustomValuesEnabled" value="true" />
+  </inspection_tool>
   <inspection_tool class="MongoJSExtResolveInspection" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="MongoJSExtSideEffectsInspection" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="MongoJSResolveInspection" enabled="false" level="WARNING" enabled_by_default="false" />
@@ -27,7 +44,7 @@
       <option name="ALLOW_RISKY_RULES" value="true" />
     </scope>
     <option name="CODING_STANDARD" value="Custom" />
-    <option name="CUSTOM_RULESET_PATH" value="$USER_HOME$/dev/webapps/goals/.php_cs" />
+    <option name="CUSTOM_RULESET_PATH" value="$USER_HOME$/dev/noprotocol/ptw-api/.php_cs" />
     <option name="ALLOW_RISKY_RULES" value="true" />
   </inspection_tool>
   <inspection_tool class="PhpClosureCanBeConvertedToShortArrowFunctionInspection" enabled="true" level="INFORMATION" enabled_by_default="true">
