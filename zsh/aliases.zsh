@@ -24,8 +24,9 @@ alias pa="php artisan"
 alias cs-copy='cp $HOME/.dotfiles/config/php/.php_cs "`pwd`"'
 alias cs-dry="./vendor/bin/php-cs-fixer fix --config='.php_cs' -v --show-progress=none --dry-run"
 alias cs-fix="./vendor/bin/php-cs-fixer fix --config='.php_cs' -v --show-progress=none"
-alias pu="./vendor/bin/phpunit"
-alias puf="./vendor/bin/phpunit --filter "
+alias pu="./vendor/bin/phpunit --colors=always -c ./phpunit.xml"
+alias puf="./vendor/bin/phpunit --colors=always -c ./phpunit.xml --filter "
+alias puc="./vendor/bin/phpunit --colors=always -c ./phpunit.xml --coverage-html docs/phpunit"
 alias phpfiles="find . -type f -print | grep php | wc -l"
 
 # Editor shortcut
