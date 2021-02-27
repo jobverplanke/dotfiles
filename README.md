@@ -30,7 +30,6 @@ PHP Global Composer Packages
 ```shell
 $ composer global require laravel/installer
 $ composer global require laravel/valet
-$ composer global require spatie/mixed-content-scanner-cli
 ```
 
 Setup Laravel Valet
