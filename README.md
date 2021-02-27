@@ -20,9 +20,10 @@ PHP Extensions
 ```shell
 $ pecl channel-update pecl.php.net
 $ pecl install igbinary-3.1.6
+$ pecl install imagick-3.4.4
 $ pecl install redis-5.3.2
 $ pecl install pcov-1.0.6
-$ pecl install imagick-3.4.4
+$ pecl install xdebug-3.0.3
 ```
 
 PHP Global Composer Packages 
