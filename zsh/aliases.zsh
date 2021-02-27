@@ -20,6 +20,11 @@ alias aliasconf='open -a /Applications/Visual\ Studio\ Code.app "$DOTFILES/zsh/a
 alias php73="phpversion 7.3"
 alias php74="phpversion 7.4"
 alias php80="phpversion 8.0"
+alias php-files="find . -type f -print | grep php | wc -l"
+alias php-ext-check="checkExtraExtensionAreLoaded"
+alias php-link-conf73="linkPhpCustomConfigurations 7.3"
+alias php-link-conf74="linkPhpCustomConfigurations 7.4"
+alias php-link-conf80="linkPhpCustomConfigurations 8.0"
 alias pa="php artisan"
 alias cs-copy='cp $HOME/.dotfiles/config/php/.php_cs "`pwd`"'
 alias cs-dry="./vendor/bin/php-cs-fixer fix --config='.php_cs' -v --show-progress=none --dry-run"

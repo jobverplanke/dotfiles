@@ -24,8 +24,8 @@ brew 'imagemagick' # For PHP (imagick)
 # Development (binaries)
 brew 'shivammathur/php/php@7.2'
 brew 'shivammathur/php/php@7.3'
-brew 'shivammathur/php/php@7.4', restart_service: true
-brew 'shivammathur/php/php@8.0'
+brew 'shivammathur/php/php@7.4'
+brew 'shivammathur/php/php@8.0', restart_service: true
 brew 'composer'
 brew 'minikube'
 brew 'mysql@5.7'
