@@ -26,18 +26,17 @@ alias php-link-conf73="linkPhpCustomConfigurations 7.3"
 alias php-link-conf74="linkPhpCustomConfigurations 7.4"
 alias php-link-conf80="linkPhpCustomConfigurations 8.0"
 alias pa="php artisan"
-alias cs-copy='cp $HOME/.dotfiles/config/php/.php_cs "`pwd`"'
-alias cs-dry="./vendor/bin/php-cs-fixer fix --config='.php_cs' -v --show-progress=none --dry-run"
-alias cs-fix="./vendor/bin/php-cs-fixer fix --config='.php_cs' -v --show-progress=none"
 alias pu="./vendor/bin/phpunit --colors=always -c ./phpunit.xml"
 alias puf="./vendor/bin/phpunit --colors=always -c ./phpunit.xml --filter "
 alias puc="./vendor/bin/phpunit --colors=always -c ./phpunit.xml --coverage-html docs/phpunit"
-alias phpfiles="find . -type f -print | grep php | wc -l"
+alias cs-copy='cp $HOME/.dotfiles/config/php/.php_cs "`pwd`"'
+alias cs-dry="./vendor/bin/php-cs-fixer fix --config='.php_cs' -v --show-progress=none --dry-run"
+alias cs-fix="./vendor/bin/php-cs-fixer fix --config='.php_cs' -v --show-progress=none"
 
 # Editor shortcut
 alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
 alias code='open -a /Applications/Visual\ Studio\ Code.app "`pwd`"'
 
-# Architecture
+# Architecture switch
 alias toArm="arch -arm64 zsh"
 alias toIntel="arch -x86_64 zsh"
