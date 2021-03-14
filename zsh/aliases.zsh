@@ -32,6 +32,7 @@ alias puc="./vendor/bin/phpunit --colors=always -c ./phpunit.xml --coverage-html
 alias cs-copy='cp $HOME/.dotfiles/config/php/.php_cs "`pwd`"'
 alias cs-dry="./vendor/bin/php-cs-fixer fix --config='.php_cs' -v --show-progress=none --dry-run"
 alias cs-fix="./vendor/bin/php-cs-fixer fix --config='.php_cs' -v --show-progress=none"
+alias psalm-copy='cp $HOME/.dotfiles/config/php/psalm.xml "`pwd`"'
 
 # Editor shortcut
 alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
