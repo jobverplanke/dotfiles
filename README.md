@@ -60,6 +60,9 @@ MAIL_ENCRYPTION=null
 ```
 The MailHog UI will run at port `8025` and the SMTP server will run at `1025`.
 
+## Known issues
+After reboot PHP-FPM is back at version 7.3, [the fix can be found here](https://github.com/laravel/valet/issues/906)
+
 ## Resources
 - [Blog post](https://driesvints.com/blog/getting-started-with-dotfiles) of Dries Vints about dotfile
 - [Dotfiles Github repository](https://github.com/freekmurze/dotfiles) of Freek Van der Herten
