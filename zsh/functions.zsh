@@ -4,8 +4,6 @@ phpversion() {
 
   echo -e ""
   valet use "php@$1" --force
-  echo -e ""
-  valet restart
 
   echo -e ""
   composer global update
