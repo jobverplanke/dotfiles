@@ -1,6 +1,6 @@
 # ZSH Settings & plugins
-ZSH_THEME="default/agnoster"
-ZSH_CUSTOM=${HOME}/.dotfiles/zsh/zsh-custom
+ZSH_THEME="default/agnoster-jobverplanke"
+ZSH_CUSTOM=$HOME/.dotfiles/zsh/zsh-custom
 plugins=()
 
 # Terminal Settings

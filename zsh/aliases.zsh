@@ -17,19 +17,27 @@ alias gitconf='open -a /Applications/Visual\ Studio\ Code.app "$HOME/Google\ Dri
 alias aliasconf='open -a /Applications/Visual\ Studio\ Code.app "$DOTFILES/zsh/aliases.zsh"'
 
 # PHP
-alias php72="phpv 7.2"
-alias php73="phpv 7.3"
-alias php74="phpv 7.4"
-alias php80="phpv 8.0"
+alias php73="phpversion 7.3"
+alias php74="phpversion 7.4"
+alias php80="phpversion 8.0"
+alias php-files="find . -type f -print | grep php | wc -l"
+alias php-ext-check="checkExtraExtensionAreLoaded"
+alias php-link-conf73="linkPhpCustomConfigurations 7.3"
+alias php-link-conf74="linkPhpCustomConfigurations 7.4"
+alias php-link-conf80="linkPhpCustomConfigurations 8.0"
 alias pa="php artisan"
-alias pp="php please"
+alias pu="./vendor/bin/phpunit --colors=always -c ./phpunit.xml"
+alias puf="./vendor/bin/phpunit --colors=always -c ./phpunit.xml --filter "
+alias puc="./vendor/bin/phpunit --colors=always -c ./phpunit.xml --coverage-html docs/phpunit"
 alias cs-copy='cp $HOME/.dotfiles/config/php/.php_cs "`pwd`"'
 alias cs-dry="./vendor/bin/php-cs-fixer fix --config='.php_cs' -v --show-progress=none --dry-run"
 alias cs-fix="./vendor/bin/php-cs-fixer fix --config='.php_cs' -v --show-progress=none"
-alias pu="./vendor/bin/phpunit"
-alias puf="./vendor/bin/phpunit --filter "
-alias phpfiles="find . -type f -print | grep php | wc -l"
+alias psalm-copy='cp $HOME/.dotfiles/config/php/psalm.xml "`pwd`"'
 
 # Editor shortcut
-alias phpstorm='open -a ~/Library/Application\ Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/203.5981.175/PhpStorm.app "`pwd`"'
+alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
 alias code='open -a /Applications/Visual\ Studio\ Code.app "`pwd`"'
+
+# Architecture switch
+alias toArm="arch -arm64 zsh"
+alias toIntel="arch -x86_64 zsh"

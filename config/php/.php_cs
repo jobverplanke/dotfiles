@@ -7,6 +7,7 @@ $excludeDirs = [
     'public',
     'resources',
     'storage',
+    'tests',
     'vendor',
 ];
 
@@ -14,11 +15,8 @@ $rules = [
     '@PSR2' => true,
     '@PSR12' => true,
     'array_syntax' => ['syntax' => 'short'],
-    'blank_line_before_statement' => [
-        'statements' => ['break', 'continue', 'declare', 'die', 'exit', 'return', 'throw', 'try']
-    ],
     'class_attributes_separation' => true,
-    // 'declare_strict_types' => true, // Risky
+    'declare_strict_types' => true,
     'no_unused_imports' => true,
     'not_operator_with_successor_space' => true,
     'ordered_imports' => ['sort_algorithm' => 'alpha'],
