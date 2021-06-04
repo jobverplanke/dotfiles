@@ -29,7 +29,7 @@ alias pa="php artisan"
 alias pu="./vendor/bin/phpunit --colors=always -c ./phpunit.xml"
 alias puf="./vendor/bin/phpunit --colors=always -c ./phpunit.xml --filter "
 alias puc="./vendor/bin/phpunit --colors=always -c ./phpunit.xml --coverage-html docs/phpunit"
-alias cs-copy='cp $HOME/.dotfiles/config/php/.php_cs "`pwd`"'
+alias cs-copy='cp $HOME/.dotfiles/config/php/.php-cs-fixer.php "`pwd`"'
 alias cs-dry="./vendor/bin/php-cs-fixer fix --config='.php_cs' -v --show-progress=none --dry-run"
 alias cs-fix="./vendor/bin/php-cs-fixer fix --config='.php_cs' -v --show-progress=none"
 alias psalm-copy='cp $HOME/.dotfiles/config/php/psalm.xml "`pwd`"'
