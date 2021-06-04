@@ -20,9 +20,6 @@ $rules = [
     'no_unused_imports' => true,
     'not_operator_with_successor_space' => true,
     'ordered_imports' => ['sort_algorithm' => 'alpha'],
-    'phpdoc_scalar' => true,
-    'phpdoc_single_line_var_spacing' => true,
-    'phpdoc_var_without_name' => true,
 ];
 
 $finder = PhpCsFixer\Finder::create()
