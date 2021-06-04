@@ -37,6 +37,9 @@
   <inspection_tool class="OraOverloadInspection" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="OraUnmatchedForwardDeclarationInspection" enabled="false" level="ERROR" enabled_by_default="false" />
   <inspection_tool class="PgSelectFromProcedureInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+  <inspection_tool class="PhpArgumentWithoutNamedIdentifierInspection" enabled="true" level="WEAK WARNING" enabled_by_default="false">
+    <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+  </inspection_tool>
   <inspection_tool class="PhpArrayKeyDoesNotMatchArrayShapeInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
   <inspection_tool class="PhpArrayShapeAttributeCanBeAddedInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
   <inspection_tool class="PhpAttributeCanBeAddedToOverriddenMemberInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
@@ -61,7 +64,7 @@
   <inspection_tool class="PhpDocMissingReturnTagInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
     <option name="SKIP_ON_PRESENT_TYPE_HINT" value="true" />
   </inspection_tool>
-  <inspection_tool class="PhpDocSignatureInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+  <inspection_tool class="PhpDocSignatureInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false">
     <option name="ALLOW_MISSING_PARAMETERS" value="true" />
   </inspection_tool>
   <inspection_tool class="PhpExpectedValuesShouldBeUsedInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
@@ -85,11 +88,14 @@
   <inspection_tool class="PhpTooManyParametersInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
   <inspection_tool class="PhpTraditionalSyntaxArrayLiteralInspection" enabled="true" level="WARNING" enabled_by_default="true" />
   <inspection_tool class="PhpTraitsUseListInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+  <inspection_tool class="PhpUndefinedClassInspection" enabled="true" level="WARNING" enabled_by_default="true">
+    <option name="DONT_REPORT_MULTI_RESOLVE" value="true" />
+  </inspection_tool>
   <inspection_tool class="PhpUnnecessaryDoubleQuotesInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
   <inspection_tool class="PhpUsageOfSilenceOperatorInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
   <inspection_tool class="PhpVarUsageInspection" enabled="true" level="WARNING" enabled_by_default="true" />
-  <inspection_tool class="PsalmGlobal" enabled="true" level="WEAK WARNING" enabled_by_default="true">
-    <scope name="Project Files" level="WEAK WARNING" enabled="true">
+  <inspection_tool class="PsalmGlobal" enabled="false" level="WEAK WARNING" enabled_by_default="false">
+    <scope name="Project Files" level="WEAK WARNING" enabled="false">
       <option name="config" value="$USER_HOME$/.dotfiles/config/php/psalm.xml" />
       <option name="showInfo" value="true" />
       <option name="findUnusedCode" value="true" />
