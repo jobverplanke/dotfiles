@@ -24,6 +24,7 @@ $ pecl install imagick-3.4.4
 $ pecl install redis-5.3.2
 $ pecl install pcov-1.0.6
 $ pecl install xdebug-3.0.3
+$ pecl install -D 'enable-sockets="no" enable-openssl="no" enable-http2="no" enable-mysqlnd="no" enable-swoole-json="no" enable-swoole-curl="no"' swoole
 ```
 
 PHP Global Composer Packages 
@@ -38,21 +39,67 @@ $ valet install
 $ sudo valet trust
 ```
 
-## Local Mail Server
-Install MailHog via Brew to use a local mail server for testing
+## Local PHP Development Server
 
-#### Setting up .test domain
-Run the following command to tell Valet to set up a `.test` domain for the local mail server.
+### Docker
+
+To access all the web-services on the Docker side, use `valet proxy` before accessing the urls.
+This will create a Nginx configuration file for the domain `service.test`, proxying all requests to that domain through to the service HTTP server.
+
+#### MySQL
+- Port `33066` 
+- Custom configuration:
+```shell
+$ export FORWARD_DB_PORT=33066
+```
+
+#### MeiliSearch
+- Port: `7700`
+- Custom configuration:
+```shell
+$ export FORWARD_MEILISEARCH_PORT=7700
+```
+- Web: https://meilisearch.test
+```shell
+$ valet proxy meilisearch.test http://127.0.0.1:7700
+```
+
+#### Redis
+- Port: `6379`
+- Custom configuration:
+```shell
+$ export FORWARD_REDIS_PORT=6379
+```
+
+#### MailHog
+- Port: `1025` & `8025`
+- Custom configuration
+```shell 
+$ export FORWARD_MAILHOG_PORT=1025
+$ export FORWARD_MAILHOG_DASHBOARD_PORT=8025
+```
+
+- Web: https://mail.test
 ```shell
 $ valet proxy mail.test http://127.0.0.1:8025
 ```
-This will create a Nginx configuration file for the domain `mail.test`, proxying all requests to that domain through to the MailHog HTTP server.
+
+#### MinIO
+- Port: `9001`
+- Custom configuration: 
+```shell
+$ export FORWARD_MINIO_PORT=9001
+```
+- Web: https://cloud-storage.test
+```shell
+$ valet proxy cloud-storage.test http://127.0.0.1:9001
+```
 
 #### Configuring for a Laravel application
 To get MailHog working with your Laravel application, update the following keys in your `.env` file
 ```dotenv
 MAIL_DRIVER=smtp
-MAIL_HOST=127.0.0.1
+MAIL_HOST=mailhog #(container name)
 MAIL_PORT=1025
 MAIL_USERNAME=null
 MAIL_PASSWORD=null

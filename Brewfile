@@ -15,7 +15,7 @@ brew 'kubernetes-cli'
 brew 'libcoap' # Needed for IKEA TRÅDFRI lights
 brew 'mackup'
 brew 'mas' # Mac App Store Installer
-brew 'mailhog', restart_service: true
+# brew 'mailhog', restart_service: true # Run via Docker
 brew 'pkg-config' # For PHP (imagick)
 brew 'svn' # Need for font-ibm-plex-mono
 brew 'wget'
